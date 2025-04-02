@@ -1,14 +1,18 @@
 {
   "name": "create-mcp-server",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "CLI tool to create new MCP server projects",
   "main": "dist/index.js",
   "bin": "./dist/index.js",
   "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "ts-node --esm src/index.ts"
+    "dev": "tsx watch src/index.ts"
   },
   "keywords": [
     "mcp",
@@ -29,7 +33,7 @@
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.11.24",
     "@types/prompts": "^2.4.9",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.19.3",
     "typescript": "^5.3.3"
   }
 }

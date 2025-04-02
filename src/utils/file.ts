@@ -25,7 +25,7 @@ export async function createProject(name: string, targetDir: string) {
       scripts: {
         build: "tsc",
         start: "node dist/index.js",
-        dev: "ts-node --esm src/index.ts",
+        dev: "tsx watch src/index.ts",
       },
       dependencies: {
         "@modelcontextprotocol/sdk": "^1.2.0",
@@ -33,7 +33,7 @@ export async function createProject(name: string, targetDir: string) {
       },
       devDependencies: {
         "@types/node": "^20.11.24",
-        "ts-node": "^10.9.2",
+        tsx: "^4.19.3",
         typescript: "^5.3.3",
       },
     },
@@ -46,8 +46,8 @@ export async function createProject(name: string, targetDir: string) {
     {
       compilerOptions: {
         target: "ES2022",
-        module: "NodeNext",
-        moduleResolution: "NodeNext",
+        module: "Node16",
+        moduleResolution: "Node16",
         outDir: "./dist",
         rootDir: "./src",
         strict: true,
@@ -56,7 +56,7 @@ export async function createProject(name: string, targetDir: string) {
         forceConsistentCasingInFileNames: true,
       },
       include: ["src/**/*"],
-      exclude: ["node_modules", "dist"],
+      exclude: ["node_modules"],
     },
     { spaces: 2 }
   );
